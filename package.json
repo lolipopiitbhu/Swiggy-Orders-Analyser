@@ -1,0 +1,33 @@
+{
+  "name": "swiggy-orders-analyser",
+  "version": "1.0.0",
+  "description": "Swiggy Seller Orders Analyser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel-version": "babel --version",
+    "start": "nodemon --exec babel-node index.js",
+    "build": "babel src/ -d lib/",
+    "prepublish": "npm run build",
+    "flow": "flow"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lolipopiitbhu/Swiggy-Orders-Analyser.git"
+  },
+  "author": "Monika Shivhare",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lolipopiitbhu/Swiggy-Orders-Analyser/issues"
+  },
+  "homepage": "https://github.com/lolipopiitbhu/Swiggy-Orders-Analyser#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-flow": "^7.10.4",
+    "flow-bin": "^0.131.0",
+    "nodemon": "^2.0.4"
+  }
+}
