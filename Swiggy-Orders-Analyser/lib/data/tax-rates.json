@@ -1,0 +1,20 @@
+{
+  "Sheet1": [
+      {
+          "itemName": "Surf Excel Easy Wash Detergent Powder : 1.5 Kg",
+          "taxRate": "18"
+      },
+      {
+          "itemName": "Unibic Cookies Fruit Nut : 150 Gm",
+          "taxRate": "18"
+      },
+      {
+          "itemName": "Himanshu Gold Chakki Atta : 5 Kg",
+          "taxRate": "0"
+      },
+      {
+          "itemName": "Aakash Namkeen Lajawab Mix : 350 Gm",
+          "taxRate": "12"
+      }
+  ]
+}
