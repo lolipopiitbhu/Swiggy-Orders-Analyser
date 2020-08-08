@@ -1,7 +1,7 @@
 import {INVALID_ITEM_STRING, TAX_ITEM_NOT_FOUND} from '../../constants/error-codes';
 export class Item{
   name: String;
-  price: Number;
+  amount: Number;
   quantity: Number;
   taxRate: Number;
 
@@ -13,7 +13,7 @@ export class Item{
 
     this.name = segments[0];
     this.quantity = Number(segments[2]);
-    this.price = Number(segments[3]);
+    this.amount = Number(segments[3]);
 
     const taxRateMap = taxRates.Sheet1;
     const taxItem  = taxRateMap.find(item => item.itemName === this.name);

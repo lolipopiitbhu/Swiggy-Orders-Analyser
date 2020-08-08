@@ -6,5 +6,10 @@ export function calculate(){
   const orders = report.orders;
   const products = report.getProducts();
   const tax = report.getTax();
-  console.log(tax);
+  const emptyTax = report.getTaxRateUnavailableItems();
+  const taxed = report.getTaxItemByRate(18);
+  const validation = report.validateAllOrders();
+  const invalidOrders = report.getInvalidOrders();
+  console.log(taxed);
+
 }

@@ -1,4 +1,5 @@
 import * as fieldNames from '../../constants/field-names';
+import * as orderStatus from '../../constants/order-status';
 import {Item} from './item';
 export class Order{
   orderId: string|Number;
@@ -67,7 +68,11 @@ export class Order{
 
     const itemStrings = this.getItemStrings(orderData);
     this.items = itemStrings.map(itemString => new Item(itemString, taxRates));
-    
+
+    this.totalPrice = this.items.reduce((total, item) => {
+      return total + item.amount;
+    },0);
+
   }
 
   getItemStrings(orderData: *){
@@ -80,6 +85,19 @@ export class Order{
       itemStrings.push(orderData[keys[itemStartIndex + itemIndex]]);
     }
     return itemStrings;
+  }
+
+  validateOrder(){
+    let priceValidation = false;
+    if (this.orderStatus === orderStatus.FAILED){
+      priceValidation = this.totalBillAmount === 0;
+    }else {
+      //const total = this.totalPrice + this.taxRestaurant + this.itemSGST + this.itemCGST + this.itemIGST + this.packingChargeSGST + this.packingChargeCGST + this.packingChargeIGST + this.serviceChargeSGST + this.serviceChargeCGST + this.serviceChargeIGST + this.packingCharge;
+      const total = this.totalPrice;
+      priceValidation = total === this.totalBillAmount;
+    }
+    const countValidation = this.items.length === this.itemCount;
+    return priceValidation && countValidation;
   }
 
 }
